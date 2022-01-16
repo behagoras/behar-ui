@@ -1,9 +1,9 @@
+import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
 import React from 'react'
-import { Paper, Table, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
 import { BeharTableProps } from './BeharTable.types'
 import BeharTableRow from './BeharTableRow'
 
-export default function BeharTable({ rows, headers }:BeharTableProps): JSX.Element {
+export default function BeharTable({ rows, headers }: BeharTableProps): JSX.Element {
 
   return (
     <TableContainer component={Paper}>
@@ -15,9 +15,11 @@ export default function BeharTable({ rows, headers }:BeharTableProps): JSX.Eleme
             ))}
           </TableRow>
         </TableHead>
-        {rows.map((row) => (
-          <BeharTableRow cells={row.cells} />
-        ))}
+        <TableBody>
+          {rows.map((row, index) => (
+            <BeharTableRow key={index} cells={row.cells} />
+          ))}
+        </TableBody>
       </Table>
     </TableContainer>
   )

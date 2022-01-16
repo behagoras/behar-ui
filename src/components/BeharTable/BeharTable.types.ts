@@ -6,6 +6,7 @@ export interface BeharTableProps {
   rows: BeharTableRow[];
   headers: BeharTableHeader[];
   pagination?: Pagination;
+  key?: string;
 }
 
 export interface BeharTableHeader {

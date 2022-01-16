@@ -10,10 +10,15 @@
   "engines": {
     "node": ">=10"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/behagoras/behar-ui"
+  },
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
+    "test:watch": "tsdx test --watch",
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
@@ -50,7 +55,10 @@
     }
   ],
   "devDependencies": {
+    "@types/react-test-renderer": "^17.0.1",
     "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.8",
+    "@babel/preset-react": "^7.16.7",
     "@size-limit/preset-small-lib": "^7.0.5",
     "@storybook/addon-essentials": "^6.4.13",
     "@storybook/addon-info": "^5.3.21",
@@ -59,11 +67,14 @@
     "@storybook/react": "^6.4.13",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
+    "babel-jest": "^27.4.6",
     "babel-loader": "^8.2.3",
     "husky": "^7.0.4",
+    "jest": "^27.4.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-is": "^17.0.2",
+    "react-test-renderer": "^17.0.2",
     "size-limit": "^7.0.5",
     "tsdx": "^0.14.1",
     "tslib": "^2.3.1",
@@ -76,5 +87,19 @@
     "@mui/styled-engine": "npm:@mui/styled-engine-sc@^5.1.0",
     "@mui/styled-engine-sc": "^5.1.0",
     "styled-components": "^5.3.3"
-  }
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3| m4a|aac|oga)$": "identity-obj-proxy",
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    }
+  },
+  "keywords": [
+    "react",
+    "ui",
+    "material-ui",
+    "styled-components",
+    "emotion",
+    "behar"
+  ]
 }
